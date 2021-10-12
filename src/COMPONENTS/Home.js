@@ -62,13 +62,14 @@ function Home() {
       }
       };
      
-      
+      const signout=()=>{auth.signOut()}
       
     
     return (
         <div>
              <div className="App">
       <center>
+        <button  onClick={signout} >Sign Out</button>
         <label>
           Enter Your Study Material Name
         <input type="text" accept="application/pdf" value={name} onChange={(e)=>{
