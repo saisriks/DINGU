@@ -8,16 +8,18 @@ import '../CSS/App.css';
 
 
 
+
 function App() {
  
 const [user]=useAuthState(auth);
-    
-    
+   
  
   return (
-    <body>
-    {user ? <Home/>:<Login/>}
-    </body>
+    
+    <>
+    
+    {user ? <div> <Home/></div> :<div><Login/></div>}
+    </>
   )
 }
 

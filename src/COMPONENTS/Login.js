@@ -29,11 +29,6 @@ function Login() {
             </button>
           </div>
         </div>
-        <footer className="footer mt-auto py-3">
-  <div className="container">
-    <center><span className="text-muted">&gt;&gt;DINGU © 2021</span></center>
-  </div>
-</footer>
       </div>
       
     )

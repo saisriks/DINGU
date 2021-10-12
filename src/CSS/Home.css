@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
 
+
+
 body{
     margin: 0;
     padding: 0;
@@ -36,4 +38,10 @@ input.form-control{
 
 h1{
     color: white;
+}
+.nav-link{
+    border: 5px solid white;
+    border-radius: 15px;
+    color: rgb(0, 255, 0);
+    text-decoration-style: none;
 }

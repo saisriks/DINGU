@@ -1,10 +1,15 @@
 import React,{useState,useEffect} from 'react';
 import {auth, db, storage} from '../SERVICES/firebasse';
 import '../CSS/Home.css';
-
 import {useAuthState} from 'react-firebase-hooks/auth';
+import { Avatar } from '@material-ui/core';
+
 
 function Home() {
+   let today = new Date().toISOString().slice(0, 10)
+
+
+
     const[r,setr]=useState('');
     const [user]=useAuthState(auth);
     const [pdf,setPdf]=useState([]);
@@ -36,12 +41,10 @@ function Home() {
     
    
     const upload = async ()=>{
-      var fileName = image;
-        var extension = fileName.substring(fileName.lastIndexOf('.') + 1);
-        console.log(extension)
-      if(image.size>1000000){
+     
+      if(image.size>199999){
         image.value=""
-        alert("Hey User!, Reduce the file size lesser than 1MB for better performance.")
+        alert("Hey User We Limit The File Size To 1 MB To Provide More Study Materials Please Reduce The File Size To 1MB")
         
       
       }
@@ -49,7 +52,7 @@ function Home() {
       else{
         const storageRef = storage.ref();
         const fileRef = storageRef.child(image.name); 
-        await fileRef.put(image).then(()=>{setr('Message Posted')});
+        await fileRef.put(image).then(()=>{setr('success')});
         const downloadurl=(await fileRef.getDownloadURL());
         
         await  db.collection("files").doc().set({
@@ -57,24 +60,26 @@ function Home() {
           uploadedby:user.displayName,
           photourl:user.photoURL,
           name:name,
+          uploadedon:today,
           
         });
       }
       };
+     const signout=()=>{auth.signOut()}
      
       
       
     
     return (
-        <div classNmae="main">
-            <h1 className="heading font-weight-bolder mt-3 pr-4">&gt;&gt;DINGU</h1>
+<div classNmae="main">
+            <h1 className="heading font-weight-bolder mt-3 pr-4 ">&gt;&gt;DINGU</h1>
             <hr/>
             <div className="posts">
     {
-        pdf.map((post) => <div key={post.key} ><center><h1>< a  href={post.url} >{post.name}</a></h1></center></div>)
+        pdf.map((post) => <  ><center><h1 className="LInks" key={post.key} ><Avatar style={{width:60,height:60}} src={post.photourl} /><h2> By {post.uploadedby} at {post.uploadedon}</h2>< a className="nav-link" href={post.url} >{post.name}</a></h1></center></>)
        }
        </div>
-       <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-black">
+       <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
 
        <h4 style={{color:"green"}} >{r}</h4>
 
@@ -82,7 +87,7 @@ function Home() {
           setname(e.target.value)
         }} />
 
-<div className="input-group mb-2 mx-5">
+<div className="input-group mb-2 mx-5   ">
   <div className="custom-file">
     <input type="file" class="custom-file-input" id="inputGroupFile02" accept="application/pdf"  onChange={(e)=>{setimage(e.target.files[0])}}/>
     <label className="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
