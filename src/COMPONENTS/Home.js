@@ -41,7 +41,7 @@ function Home() {
         console.log(extension)
       if(image.size>1000000){
         image.value=""
-        alert("Hey User We Limit The File Size To 1 MB To Provide More Study Materials Please Reduce The File Size To 1MB")
+        alert("Hey User!, Reduce the file size lesser than 1MB for better performance.")
         
       
       }
@@ -62,14 +62,15 @@ function Home() {
       }
       };
      
-      const signout=()=>{auth.signOut()}
+      
       
     
     return (
-        <div>
-             <div className="App">
+        <div classNmae="main">
+            <div className="navbar navbar-light bg-dark justify-content-center">
+              <a className="navbar-brand heading font-weight-bolder mt-3 pr-4 text-success" href="#">&gt;&gt;DINGU</a>
+            </div>
       <center>
-        <button  onClick={signout} >Sign Out</button>
         <label>
           Enter Your Study Material Name
         <input type="text" accept="application/pdf" value={name} onChange={(e)=>{
@@ -79,9 +80,8 @@ function Home() {
           setimage(e.target.files[0])
       }}/>
       <button onClick={upload} >Upload</button>
-      <h4 style={{color:"white"}} >{r}</h4>
+      <h4 style={{color:"yellow"}} >{r}</h4>
       </center>
-    </div>
     {
         pdf.map((post) => <div key={post.key} ><center><h1>< a  href={post.url} >{post.name}</a></h1></center></div>)
        }
