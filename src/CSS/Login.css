@@ -19,6 +19,7 @@ body{
     color: rgb(0, 255, 0);
 }
 .message{
+    margin-top: 4%;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
     color: rgb(0, 255, 0);
@@ -35,13 +36,14 @@ body{
     background: rgb(0, 255, 0);
     color: #000000;
 }
+#img-grid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 @media (max-width: 765px) {
-    .img-fluid{
-        display: none;
-        margin: 0;
-        padding: 0;
-    }
+    
     #img-grid{
         display: none;
         margin: 0;

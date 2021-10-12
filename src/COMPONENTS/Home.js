@@ -49,7 +49,7 @@ function Home() {
       else{
         const storageRef = storage.ref();
         const fileRef = storageRef.child(image.name); 
-        await fileRef.put(image).then(()=>{setr('success')});
+        await fileRef.put(image).then(()=>{setr('Message Posted')});
         const downloadurl=(await fileRef.getDownloadURL());
         
         await  db.collection("files").doc().set({
@@ -67,24 +67,32 @@ function Home() {
     
     return (
         <div classNmae="main">
-            <div className="navbar navbar-light bg-dark justify-content-center">
-              <a className="navbar-brand heading font-weight-bolder mt-3 pr-4 text-success" href="#">&gt;&gt;DINGU</a>
-            </div>
-      <center>
-        <label>
-          Enter Your Study Material Name
-        <input type="text" accept="application/pdf" value={name} onChange={(e)=>{
-          setname(e.target.value)
-        }} /></label>
-      <input type="file"  className="fike" onChange={(e)=>{
-          setimage(e.target.files[0])
-      }}/>
-      <button onClick={upload} >Upload</button>
-      <h4 style={{color:"yellow"}} >{r}</h4>
-      </center>
+            <h1 className="heading font-weight-bolder mt-3 pr-4">&gt;&gt;DINGU</h1>
+            <hr/>
+            <div className="posts">
     {
         pdf.map((post) => <div key={post.key} ><center><h1>< a  href={post.url} >{post.name}</a></h1></center></div>)
        }
+       </div>
+       <nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-black">
+
+       <h4 style={{color:"green"}} >{r}</h4>
+
+        <input className="form-control form-control-lg m-3" type="text" placeholder="Enter File Name" value={name} onChange={(e)=>{
+          setname(e.target.value)
+        }} />
+
+<div className="input-group mb-2 mx-5">
+  <div className="custom-file">
+    <input type="file" class="custom-file-input" id="inputGroupFile02" accept="application/pdf"  onChange={(e)=>{setimage(e.target.files[0])}}/>
+    <label className="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+  </div>
+</div>
+
+        <button className="btn btn-lg btn-block my-1 mx-3" onClick={upload} ><strong>Upload</strong></button>
+
+        <br/>
+</nav>
         </div>
     )
 }
