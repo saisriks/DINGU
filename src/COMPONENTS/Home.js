@@ -42,7 +42,7 @@ function Home() {
    
     const upload = async ()=>{
      
-      if(image.size>199999){
+      if(image.size>1999999){
         image.value=""
         alert("Hey User We Limit The File Size To 1 MB To Provide More Study Materials Please Reduce The File Size To 1MB")
         
@@ -78,6 +78,18 @@ function Home() {
     {
         pdf.map((post) => <  ><center><h1 className="LInks" key={post.key} ><Avatar style={{width:60,height:60}} src={post.photourl} /><h2> By {post.uploadedby} at {post.uploadedon}</h2>< a className="nav-link" href={post.url} >{post.name}</a></h1></center></>)
        }
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
        </div>
        <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
 
