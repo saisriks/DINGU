@@ -13,6 +13,7 @@ function Login() {
       //src={book}
       <div className="main">
         <h1 className="heading font-weight-bolder mt-3 pr-4">&gt;&gt;DINGU</h1>
+        <hr/>
         <div className="row no-gutters">
         <div id="img-grid" className="col-sm-5 col-md-5 mx-3 py-3 my-3" align="center">
               <img className="img-fluid" src={hero} alt=""/>
@@ -29,6 +30,11 @@ function Login() {
             </button>
           </div>
         </div>
+        <footer className="footer mt-auto py-3">
+  <div className="container">
+    <center><span className="text-muted">&gt;&gt;DINGU © 2021</span></center>
+  </div>
+</footer>
       </div>
       
     )
