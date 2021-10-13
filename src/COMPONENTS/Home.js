@@ -94,7 +94,7 @@ function Home() {
        <br/>
               {pdf.map((post) => <  >
                 <span className="LInks" key={post.key} ></span>
-                <div className={"form-inline "/*space after class name is important*/+(post.uploadedby===user.displayName?"user-forml":"not-user-forml")}>
+                <div className={"form-inline "/*space after class name is important !!!and class name will be some what like this form-inline user-forml  or form-inline not-user-forml*/+(post.uploadedby===user.displayName?"user-forml":"not-user-forml")}>
                 <Avatar className={"avatar ml-3 "/*space after class name is important*/+(post.uploadedby===user.displayName?"user-avat":"not-user-avat")} style={{width:55,height:55}} src={post.photourl} />
                   <div className={"nav-tab ml-2 "/*space after class name is important*/+(post.uploadedby===user.displayName?"user-ntab":"not-user-ntab") }align="left">
                   <span className={"user-info text-monospace "/*space after class name is important*/+(post.uploadedby===user.displayName?"user-name":"not-user-name")}> By: {post.uploadedby}</span>
