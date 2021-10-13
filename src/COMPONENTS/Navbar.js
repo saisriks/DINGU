@@ -12,7 +12,7 @@ function Navbar() {
         <div className="Navbar">      
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-      <h1 className="heading font-weight-bolder ml-4 mt-2">&gt;&gt;DINGU</h1>
+      <h1 className="heading font-weight-bolder ml-4 mt-1">&gt;&gt;DINGU</h1>
     
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
