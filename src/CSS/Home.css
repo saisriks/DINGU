@@ -15,18 +15,6 @@ body{
     padding: 0;
     background: none;
 }
-.heading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 900px;
-    font-size: 40px;
-    color: rgb(0, 255, 0);
-}
-hr{
-    background: rgb(66, 66, 66);
-}
 input.form-control{
     width: 100%;
     background-color: rgb(10, 10, 10);
@@ -34,12 +22,6 @@ input.form-control{
 }
 ::placeholder{
     color: rgb(0, 255, 0);
-}
-.custom-file{
-    width: 40%;
-}
-.custom-file-label{
-    border: 2px solid rgb(0, 255, 0);
 }
 .btn{
     width: 100%;
@@ -68,13 +50,15 @@ input.form-control{
     color: #fff;
 }
 .avatar{
-    border: 5px solid rgb(0, 255, 0);
+    border: 3px solid rgb(0, 255, 0);
+}
+input.form-control{
+    padding: 18px 100px;
 }
 label {
     background-color: rgb(0, 255, 0);
     color: white;
-    padding: 0.5rem;
-    border-radius: 0.3rem;
+    padding: 7px;
     cursor: pointer;
     margin-top: 1rem;
   }
@@ -87,16 +71,17 @@ label {
     cursor: pointer;
     margin-top: 1rem;
   }
+  [type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+  }
+  #upload-btn{
+      width: 6%;
+      
+      padding: 0px;
+  }
 @media (max-width: 700px) {
-    .heading{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 900px;
-        font-size: 25px;
-        color: rgb(0, 255, 0);
-    }
     .nav-link{
         font-size: 13px;
         width: 120%;
@@ -114,5 +99,15 @@ label {
     .user-info{
         font-size: 10px;
         color: #fff;
+    }
+    input.form-control{
+        width: 0%;
+        background-color: rgb(10, 10, 10);
+        border: 2px solid rgb(0, 255, 0);
+    }
+    #upload-btn{
+        width: 6%;
+        
+        padding: 1px 100px ;
     }
 }

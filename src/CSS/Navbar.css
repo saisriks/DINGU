@@ -36,12 +36,11 @@ button.navbar-toggler{
 }
 @media (max-width: 700px) {
     .heading{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        margin: 0 auto;
         font-family: 'Poppins', sans-serif;
         font-weight: 900px;
-        font-size: 25px;
+        font-size: 23px;
         color: rgb(0, 255, 0);
+
     }
 }
