@@ -7,8 +7,14 @@
 }
 .false{
     display: flex;
-    align-self: flex-end;
+    align-self: flex-start;
     margin-right: 270px;
+}
+.true{
+  display: flex;
+    align-self: flex-end;
+    margin-right: 10px;
+   
 }
 .posts{
     display: inline;

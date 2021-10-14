@@ -44,6 +44,14 @@ button.navbar-toggler{
         font-weight: 900px;
         font-size: 23px;
         color: rgb(0, 255, 0);
-
+    }
+    .avatar{
+        margin-top: 10px;
+    }
+    .user-name{
+        padding-top: 10px;
+    }
+    .nav-item{
+        border-top: 2px solid rgb(66, 66, 66);
     }
 }
