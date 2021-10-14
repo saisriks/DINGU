@@ -3,15 +3,19 @@ import {auth, db, storage} from '../SERVICES/firebasse';
 import '../CSS/Home.css';
 import {useAuthState} from 'react-firebase-hooks/auth';
 import { Avatar } from '@material-ui/core';
-import Navbar from './Navbar';
+import firebase from 'firebase';
+import Navbar from './Navbar'
+
+
+
 
 
 function Home() {
    let today = new Date().toISOString().slice(0, 10)
 
 
-
-    const[r,setr]=useState('');
+    const [placeholder,setplaceholder]=useState('Enter File Name')
+    const[r,setr]=useState(null);
     const [user]=useAuthState(auth);
     const [pdf,setPdf]=useState([]);
     const[image,setimage]=useState('');
@@ -21,7 +25,7 @@ function Home() {
       const getPostsFromFirebase = [];
       const subscriber =
       db
-        .collection("files") 
+        .collection("files").orderBy('createdat') 
         .onSnapshot((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             getPostsFromFirebase.push({
@@ -42,10 +46,11 @@ function Home() {
     
    
     const upload = async ()=>{
+      setr("")
      
       if(image.size>1999999){
         image.value=""
-        alert("Hey User We Limit The File Size To 1 MB To Provide More Study Materials Please Reduce The File Size To 1MB")
+        alert(`Hey ${user.displayName} We Limit The File Size To 1 MB To Provide More Study Materials Please Reduce The File Size To 1MB`)
         
       
       }
@@ -53,7 +58,7 @@ function Home() {
       else{
         const storageRef = storage.ref();
         const fileRef = storageRef.child(image.name); 
-        await fileRef.put(image).then(()=>{setr('success')});
+        await fileRef.put(image);
         const downloadurl=(await fileRef.getDownloadURL());
         
         await  db.collection("files").doc().set({
@@ -62,13 +67,20 @@ function Home() {
           photourl:user.photoURL,
           name:name,
           uploadedon:today,
+          createdat:firebase.firestore.FieldValue.serverTimestamp(),
           
-        });
+        }).then(()=>{setr(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+      </svg>)});
       }
       };
-     const signout=()=>{auth.signOut()}
      
-      
+     const placeholdersetter=()=>{
+       setplaceholder('')
+     }
+    
+
       
     
     return (
@@ -76,41 +88,43 @@ function Home() {
   <Navbar/>
             
             <div className="posts">
+            
+            <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
+       <br/>
               {pdf.map((post) => <  >
-                <span className="links" key={post.key} ></span>
-                <div className="form-inline">
-                <Avatar className="avatar ml-3" style={{width:55,height:55}} src={post.photourl} />
-                  <div className="nav-tab ml-2" align="left">
-                  <span className="user-info text-monospace"> By: {post.uploadedby}</span>
-                  <div className="nav-link mb-3">
-                    <a className="file-info" href={post.url} >{post.name}</a>
+                <span className="LInks" key={post.key} ></span>
+                <div className={"form-inline "+(post.uploadedby===user.displayName?"if true":"if false")}>
+                <Avatar className={"avatar ml-3 "/* +(post.uploadedby===user.displayName?"if true":"if false") */} style={{width:55,height:55}} src={post.photourl} />
+                  <div className={"nav-tab ml-2 "/* +(post.uploadedby===user.displayName?"if true":"if false") */} align="left">
+                  <span className={"user-info text-monospace "/* +(post.uploadedby===user.displayName?"if true":"if false") */}> By: {post.uploadedby}</span>
+                  <div className={"nav-link mb-3 "+(post.uploadedby===user.displayName?"if tru":"if fals")}>
+                    <a className={"file-info "/* +(post.uploadedby===user.displayName?"if true":"if false") */} href={post.url} style={{fontSize:"14px"}} >{(post.name).toUpperCase()}</a>
                     <br/>
-                    <span className="date text-monospace">{post.uploadedon}</span>
+                    <span className={"date text-monospace "/* +(post.uploadedby===user.displayName?"if true":"if false") */}>{post.uploadedon}</span>
                     </div>
                     </div>
 
                   </div>
 
               </>)}
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
-       <br/>
+       
        </div>
        <nav className="navbar fixed-bottom navbar-expand-lg">
        <h5 className="text mr-1" style={{color:"green"}} >{r}</h5>
 
         <div className="input-group mb-3">
         
-  <input type="text" className="form-control mt-3" placeholder="Enter File Name" value={name} onChange={(e)=>{
+  <input type="text" className="form-control mt-3" placeholder={placeholder} onFocus={placeholdersetter} onBlur={()=>{setplaceholder("Enter File Name")}} value={name} onChange={(e)=>{
           setname(e.target.value)
         }} />
 
@@ -133,6 +147,7 @@ function Home() {
        
 </nav>
         </div>
+        
     )
 }
 
