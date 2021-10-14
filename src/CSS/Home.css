@@ -1,11 +1,21 @@
 /*GOOGLE FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
-
-
+.file-info{
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+.false{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 270px;
+}
 .posts{
     display: inline;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column-reverse;
+    
 }
 .posts::-webkit-scrollbar{
     overflow-y: hidden;
@@ -34,7 +44,7 @@ input.form-control{
     width: 300%;
     border: 1px solid white;
     border-radius: 5px;
-    color: rgb(0, 255, 0);
+    background-color: rgb(0, 0, 0);
     text-decoration-style: none;
 }
 .date{
@@ -76,14 +86,23 @@ input.form-control{
     cursor: pointer;
     margin-top: 1rem;
   }
+  .tru{
+    background-color: rgb(203, 209, 209);
+  }
+  .fals{
+      background-color: rgb(211, 208, 208) ;
+  }
   
 @media (max-width: 700px) {
+    .false{
+        margin-right: 20px;
+    }
     .nav-link{
         font-size: 13px;
         width: 120%;
         border: 1px solid white;
         border-radius: 5px;
-        color: rgb(0, 255, 0);
+        color: rgb(0, 0, 0);
         text-decoration-style: none;
     }
     .date{
