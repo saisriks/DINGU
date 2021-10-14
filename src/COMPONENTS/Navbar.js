@@ -24,7 +24,7 @@ function Navbar() {
             <Avatar className="avatar" src={user.photoURL} style={{height:"1000",width:"100",}} /><span className="user-name mt-2 ml-2">{user.displayName}</span>
         </li>
         <li class="nav-item m-2">
-            <button className="btn mr-3" onClick={signout}><b>Sign out</b></button>
+            <button id="signoutbtn" className="btn mr-3" onClick={signout}><b>Sign out</b></button>
         </li>
     </ul>
 </div>
