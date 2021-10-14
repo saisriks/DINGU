@@ -100,11 +100,10 @@ function Home() {
        <br/>
        <br/>
        <br/>
-       <br/>
               {pdf.map((post) => <  >
                 <span className="LInks" key={post.key} ></span>
                 <div className={"form-inline "+(post.uploadedby===user.displayName?"if true":"if false")}>
-                <Avatar className={"avatar ml-3 "/* +(post.uploadedby===user.displayName?"if true":"if false") */} style={{width:55,height:55}} src={post.photourl} />
+                <Avatar className={"avatar ml-2"/* +(post.uploadedby===user.displayName?"if true":"if false") */} style={{width:55,height:55}} src={post.photourl} />
                   <div className={"nav-tab ml-2 "/* +(post.uploadedby===user.displayName?"if true":"if false") */} align="left">
                   <span className={"user-info text-monospace "/* +(post.uploadedby===user.displayName?"if true":"if false") */}> By: {post.uploadedby}</span>
                   <div className={"nav-link mb-3 "+(post.uploadedby===user.displayName?"if tru":"if fals")}>
