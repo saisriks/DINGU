@@ -79,13 +79,6 @@ input.form-control{
     background-color: rgb(10, 10, 10);
     border: 2px solid rgb(0, 255, 0);
 }
-.upload-label{
-    background-color: rgb(0, 255, 0);
-    color: rgb(0, 0, 0);
-    padding: 6px;
-    cursor: pointer;
-    margin-top: 1rem;
-}
 .file-label {
     background-color: rgb(0, 255, 0);
     color: white;
@@ -98,11 +91,18 @@ input.form-control{
     overflow: hidden;
     width: 0;
 }
-[type="btn"] {
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    width: 0;
+.button-send {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 1px 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.button-send:focus{
+    border: none;
+    outline: none;
 }
 
 @media (max-width: 700px) {
@@ -137,5 +137,6 @@ input.form-control{
         max-width: 40px;
         border: 3px solid rgb(0, 255, 0);
     }
+    
     
 }
