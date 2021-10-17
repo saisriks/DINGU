@@ -98,7 +98,7 @@ function Home() {
                 <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
               </svg>
 
-              <a key={post.key} className={"file-info "/* +(post.uploadedby===user.displayName?"if true":"if false") */} href={post.url} style={{fontSize:"14px"}} >{(post.name).toUpperCase()}</a>
+              <a key={post.key} className={"file-info text-wrap "/* +(post.uploadedby===user.displayName?"if true":"if false") */} href={post.url} style={{fontSize:"14px"}} >{(post.name).toUpperCase()}</a>
 
               <br/>
 
@@ -128,14 +128,8 @@ function Home() {
               </svg>
             </label>
 
-            
             {/* SEND-BUTTON */}
-            <input type="btn" id="btn" className="upload-button" onClick={upload}/>
-            <label for="btn" className="upload-label text-dark">
-              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-cursor-fill" viewBox="0 0 16 16">
-                <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
-              </svg>
-            </label>
+        <button className="button-send btn-group-sm" onClick={upload}><i className="fa fa-send"></i></button>
           </div>
         </nav>
       </div>
