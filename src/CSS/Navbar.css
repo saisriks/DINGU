@@ -34,6 +34,9 @@ button.navbar-toggler{
     font-weight: bolder;
     color: rgb(0, 255, 0);
 }
+.avatar{
+    border: 3px solid rgb(0, 255, 0);
+}
 #signoutbtn{
     width: 100%;
 }
@@ -46,6 +49,7 @@ button.navbar-toggler{
         color: rgb(0, 255, 0);
     }
     .avatar{
+        border: 3px solid rgb(0, 255, 0);
         margin-top: 10px;
     }
     .user-name{

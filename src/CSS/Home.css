@@ -1,6 +1,13 @@
 /*GOOGLE FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
 .file-info{
     color: rgb(0, 0, 0);
     font-weight: bolder;
@@ -8,50 +15,30 @@
 .false{
     display: flex;
     align-self: flex-start;
-    margin-right: 270px;
+    margin-right: 225px;
 }
 .true{
-  display: flex;
+    display: flex;
     align-self: flex-end;
     margin-right: 10px;
-   
+    flex-direction: row-reverse;
 }
 .posts{
     display: inline;
-    overflow-y: scroll;
     display: flex;
     flex-direction: column-reverse;
     
 }
-.posts::-webkit-scrollbar{
-    overflow-y: hidden;
-}
-body{
-    margin: 0;
-    padding: 0;
-    background: none;
-}
-input.form-control{
-    width: 100%;
-    background-color: rgb(10, 10, 10);
-    border: 2px solid rgb(0, 255, 0);
-}
-::placeholder{
-    color: rgb(0, 255, 0);
-}
 
-
-.navbar{
-    background: rgb(0, 0, 0);
-    border-top: 2px solid rgb(66, 66, 66);
-}
-.nav-link{
-    font-size: 13px;
-    width: 300%;
-    border: 1px solid white;
-    border-radius: 5px;
+.nav-tab{
+    border: none;
+    outline: none;
     background-color: rgb(0, 0, 0);
     text-decoration-style: none;
+}
+.nav-link{
+    font-size: 14px;
+    border-radius: 6px;
 }
 .date{
     font-size: 10px;
@@ -63,53 +50,74 @@ input.form-control{
     font-size: 11px;
     color: #fff;
 }
-.avatar{
+.avatar-false{
+    max-height: 551px;
+    max-width: 55px;
+    border: 3px solid rgb(0, 255, 0);
+}
+.avatar-true{
+    max-height: 55px;
+    max-width: 55px;
     border: 3px solid rgb(0, 255, 0);
 }
 
-.file-label {
-    background-color: rgb(0, 255, 0);
-    color: white;
-    padding: 6px;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  [type="file"] {
-    height: 0;
-    overflow: hidden;
-    width: 0;
-  }
-  [type="btn"] {
-      visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    width: 0;
-  }
-  .upload-label{
-    background-color: rgb(0, 255, 0);
-    color: rgb(0, 0, 0);
-    padding: 6px;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
   .tru{
     background-color: rgb(203, 209, 209);
   }
   .fals{
       background-color: rgb(211, 208, 208) ;
   }
-  
+
+
+  /* MESSAGE-TYPING-FIELD */
+#message-typing-box{
+    background: rgb(0, 0, 0);
+    border-top: 2px solid rgb(66, 66, 66);
+}
+input.form-control{
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    border: 2px solid rgb(0, 255, 0);
+}
+.upload-label{
+    background-color: rgb(0, 255, 0);
+    color: rgb(0, 0, 0);
+    padding: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.file-label {
+    background-color: rgb(0, 255, 0);
+    color: white;
+    padding: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+[type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}
+[type="btn"] {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}
+
 @media (max-width: 700px) {
+    
     .false{
         margin-right: 20px;
     }
-    .nav-link{
-        font-size: 13px;
-        width: 120%;
-        border: 1px solid white;
-        border-radius: 5px;
+    .nav-tab{
+        border: none;
         color: rgb(0, 0, 0);
         text-decoration-style: none;
+    }
+    .nav-link{
+        font-size: small;
+        max-width: 200px;
     }
     .date{
         font-size: 8px;
@@ -123,6 +131,11 @@ input.form-control{
     }
     [type="btn"]{
         max-width: 10%; 
+    }
+    .avatar{
+        max-height: 40px;
+        max-width: 40px;
+        border: 3px solid rgb(0, 255, 0);
     }
     
 }
