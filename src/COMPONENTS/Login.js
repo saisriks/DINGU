@@ -19,9 +19,9 @@ function Login() {
               <img className="img-fluid" src={hero} alt=""/>
             </div>
           <div className="col-sm-5 col-md-5 mx-4 py-3 my-3" align="left">
-            <p className="message" align="justify">
+            {/*<p className="message" align="justify">
             On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will.
-            </p>
+            </p>*/}
             <br/>
             <button type="button" className="btn btn-lg btn-block" onClick={signinwithgoogle}>
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-google pb-1" viewBox="0 0 16 16">

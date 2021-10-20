@@ -12,7 +12,7 @@ import Navbar from './Navbar'
 
 function Home() {
     let today = new Date().toISOString().slice(0, 10)
-    const [placeholder,setplaceholder]=useState('Enter File Name')
+    const [placeholder,setplaceholder]=useState('Compose your message')
     const[r,setr]=useState(null);
     const [user]=useAuthState(auth);
     const [pdf,setPdf]=useState([]);
@@ -98,7 +98,7 @@ function Home() {
                 <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
               </svg>
 
-              <a key={post.key} className={"file-info text-wrap "/* +(post.uploadedby===user.displayName?"if true":"if false") */} href={post.url} style={{fontSize:"14px"}} >{(post.name).toUpperCase()}</a>
+              <a key={post.key} className={"file-info "/* +(post.uploadedby===user.displayName?"if true":"if false") */} href={post.url} style={{fontSize:"14px"}} >{(post.name).toUpperCase()}</a>
 
               <br/>
 
@@ -118,18 +118,18 @@ function Home() {
           <div className="input-group mb-3">
 
             {/* TEXT-FIELD */}
-            <input type="text" className="form-control mt-3" maxlength="21" placeholder={placeholder} onFocus={placeholdersetter} onBlur={()=>{setplaceholder("Enter File Name")}} value={name} onChange={(e)=>{setname(e.target.value)}} />
+            <input type="text" className="form-control mt-3" placeholder={placeholder} onFocus={placeholdersetter} onBlur={()=>{setplaceholder("Compose your message")}} value={name} onChange={(e)=>{setname(e.target.value)}} />
 
             {/* FILE-IMPORT-BUTTON */}
             <input type="file" id="file" accept="application/pdf"  onChange={(e)=>{setimage(e.target.files[0])}}/>
-            <label for="file" className="file-label text-dark">
+            <label for="file" className="file-btn-label text-dark">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-paperclip" viewBox="0 0 16 16">
                 <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
               </svg>
             </label>
 
             {/* SEND-BUTTON */}
-        <button className="button-send btn-group-sm" onClick={upload}><i className="fa fa-send"></i></button>
+        <button className="button-send btn-group-sm" onClick={upload}><i className="fa fa-send pt-1"></i></button>
           </div>
         </nav>
       </div>
