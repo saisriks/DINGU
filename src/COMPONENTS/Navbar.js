@@ -10,7 +10,7 @@ function Navbar() {
 
     return (
         <div className="Navbar">      
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 
       <h1 className="heading font-weight-bolder ml-4 mt-1">&gt;&gt;DINGU</h1>
     

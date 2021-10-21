@@ -78,7 +78,7 @@ function Home() {
       
       {/* NAVBAR */}
       <Navbar/>
-      <br/>
+      <div className="divider pb-2"><br/><br/><br/></div>
       {/* POSTS OF USERS */}
       <div className="posts">
         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
@@ -102,7 +102,7 @@ function Home() {
 
               <br/>
 
-              <span key={post.key} className={"date text-monospace "/* +(post.uploadedby===user.displayName?"if true":"if false") */}>{post.uploadedon}</span>
+              <span key={post.key} className={"date text-monospace pt-2 "/* +(post.uploadedby===user.displayName?"if true":"if false") */}>{post.uploadedon}</span>
 
             </div>
           </div>
@@ -121,7 +121,7 @@ function Home() {
             <input type="text" className="form-control mt-3" placeholder={placeholder} onFocus={placeholdersetter} onBlur={()=>{setplaceholder("Compose your message")}} value={name} onChange={(e)=>{setname(e.target.value)}} />
 
             {/* FILE-IMPORT-BUTTON */}
-            <input type="file" id="file" accept="application/pdf"  onChange={(e)=>{setimage(e.target.files[0])}}/>
+            <input type="file" id="file" accept=".doc,.docx,application/msword,application/pdf"  onChange={(e)=>{setimage(e.target.files[0])}}/>
             <label for="file" className="file-btn-label text-dark">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-paperclip" viewBox="0 0 16 16">
                 <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
@@ -129,7 +129,7 @@ function Home() {
             </label>
 
             {/* SEND-BUTTON */}
-        <button className="button-send btn-group-sm" onClick={upload}><i className="fa fa-send pt-1"></i></button>
+            <button className="button-send btn-group-sm" onClick={upload}><i className="fa fa-send"></i></button>
           </div>
         </nav>
       </div>
