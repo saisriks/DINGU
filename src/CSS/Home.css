@@ -1,0 +1,155 @@
+/*GOOGLE FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
+
+body{
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+
+.file-info{
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+.false{
+    display: flex;
+    align-self: flex-start;
+    margin-right: 225px;
+}
+.true{
+    display: flex;
+    align-self: flex-end;
+    margin-right: 10px;
+    flex-direction: row-reverse;
+}
+.posts{
+    display: inline;
+    display: flex;
+    flex-direction: column-reverse;
+    
+}
+
+.nav-tab{
+    border: none;
+    outline: none;
+    background-color: rgb(0, 0, 0);
+    text-decoration-style: none;
+}
+.nav-link{
+    font-size: 14px;
+    border-radius: 6px;
+}
+.date{
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.user-info{
+    font-size: 11px;
+    color: #fff;
+}
+.avatar-false{
+    max-height: 551px;
+    max-width: 55px;
+    border: 3px solid rgb(0, 255, 0);
+}
+.avatar-true{
+    max-height: 55px;
+    max-width: 55px;
+    border: 3px solid rgb(0, 255, 0);
+}
+
+  .tru{
+    background-color: rgb(203, 209, 209);
+  }
+  .fals{
+      background-color: rgb(211, 208, 208) ;
+  }
+
+
+  /* MESSAGE-TYPING-FIELD */
+#message-typing-box{
+    background: rgb(0, 0, 0);
+    border-top: 2px solid rgb(66, 66, 66);
+}
+input.form-control{
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    border: 2px solid rgb(0, 255, 0);
+    font-family: 'Cascadia Code', sans-serif;
+}
+input.form-control:focus{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.file-btn-label {
+    background-color: rgb(0, 255, 0);
+    color: white;
+    padding: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+[type="file"] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+}
+.button-send {
+    background-color: rgb(0, 0, 0);
+    border: none;
+    outline: none;
+    color: white;
+    padding: 1px 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.button-send:focus{
+    border: none;
+    outline: none;
+}
+
+@media (max-width: 700px) {
+    
+    .false{
+        margin-right: 20px;
+    }
+    .nav-tab{
+        border: none;
+        color: rgb(0, 0, 0);
+        text-decoration-style: none;
+    }
+    .nav-link{
+        font-size: small;
+        max-width: 200px;
+    }
+    .date{
+        font-size: 8px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .user-info{
+        font-size: 10px;
+        color: #fff;
+    }
+    [type="btn"]{
+        max-width: 10%; 
+    }
+    .avatar{
+        max-height: 40px;
+        max-width: 40px;
+        border: 3px solid rgb(0, 255, 0);
+    }
+    .nav-link{
+        display: flex;
+    flex-wrap: wrap;
+    }
+    
+    
+}

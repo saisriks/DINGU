@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: none;
+}
+.bg-dark {
+    background-color: #000000!important;
+    border-bottom: 2px solid rgb(66, 66, 66);
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900px;
+    font-size: 40px;
+    color: rgb(0, 255, 0);
+}
+.dropdown-menu{
+    background: none;
+}
+button.navbar-toggler{
+    border: none;
+    outline: none;
+}
+.dropdown-toggle{
+    border: none;
+}
+.button{
+    background: none;
+}
+.user-name{
+    font-size: large;
+    font-weight: bolder;
+    color: rgb(0, 255, 0);
+}
+.avatar{
+    border: 3px solid rgb(0, 255, 0);
+}
+#signoutbtn{
+    background: rgb(0, 255, 0);
+    color: #000000;
+    box-shadow: 0px 0px 20px rgb(0, 255, 0);
+    width: 100%;
+}
+#signoutbtn:hover{
+    color: rgb(255, 255, 255);
+    background: #000000;
+    border: 2px solid rgb(0, 255, 0);
+    box-shadow: 0 0 0 #000000;
+}
+.btn{
+    box-shadow: none;
+}
+@media (max-width: 700px) {
+    .heading{
+        margin: 0 auto;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 900px;
+        font-size: 25px;
+        color: rgb(0, 255, 0);
+    }
+    .avatar{
+        border: 3px solid rgb(0, 255, 0);
+        margin-top: 10px;
+    }
+    .user-name{
+        padding-top: 10px;
+    }
+    #signoutbtn{
+        color: rgb(255, 255, 255);
+        background: #000000;
+        border: 2px solid rgb(0, 255, 0);
+        box-shadow: 0 0 0 #000000;
+        width: 100%;
+    }
+    #signoutbtn:hover{
+        background: rgb(0, 255, 0);
+        color: #000000;
+        box-shadow: 0px 0px 20px rgb(0, 255, 0);
+        }
+        .btn{
+            box-shadow: none;
+        }
+    .nav-item{
+        border-top: 2px solid rgb(66, 66, 66);
+    }
+}
