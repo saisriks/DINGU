@@ -27,15 +27,15 @@ function Login() {
             <br/>
             <center><span className="text-white font-weight-bolder">OR</span></center>
             <br/>
-            <form>
+            <form action="Home.js" method="POST">
   <div class="form-group">
-    <input type="email" class="form-control" placeholder="Enter E-mail address" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <input type="email" class="form-control" placeholder="Enter E-mail address" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" placeholder="Enter Password" id="exampleInputPassword1"/>
+    <input type="password" class="form-control" placeholder="Enter Password" id="exampleInputPassword1" required/>
   </div>
-  <center><button type="submit" class="btn btn-primary btn-lg"><b>Sign In <i class="fa fa-long-arrow-right"></i>
+  <center><button type="submit" class="btn btn-lg"><b>Sign In <i class="fa fa-long-arrow-right"></i>
 </b></button></center>
 </form>
           </div>
