@@ -34,7 +34,7 @@ body{
 .nav-tab{
     border: none;
     outline: none;
-    background-color: #0d0d0d;
+    background-color: rgb(0, 0, 0);
     text-decoration-style: none;
 }
 .nav-link{
@@ -54,19 +54,19 @@ body{
 .avatar-false{
     max-height: 551px;
     max-width: 55px;
-    border: 3px solid #00ffbe;
+    border: 3px solid rgb(0, 255, 0);
 }
 .avatar-true{
     max-height: 55px;
     max-width: 55px;
-    border: 3px solid #00ffbe;
+    border: 3px solid rgb(0, 255, 0);
 }
 
   .tru{
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(203, 209, 209);
   }
   .fals{
-      background-color: rgb(248, 248, 248) ;
+      background-color: rgb(211, 208, 208) ;
   }
 
 
@@ -78,7 +78,7 @@ body{
 input.form-control{
     width: 100%;
     background-color: rgb(10, 10, 10);
-    border: 2px solid #00ffbe;
+    border: 2px solid rgb(0, 255, 0);
     font-family: 'Cascadia Code', sans-serif;
 }
 input.form-control:focus{
@@ -87,7 +87,7 @@ input.form-control:focus{
     box-shadow: none;
 }
 .file-btn-label {
-    background-color: #00ffbe;
+    background-color: rgb(0, 255, 0);
     color: white;
     padding: 6px;
     cursor: pointer;
@@ -106,7 +106,7 @@ input.form-control:focus{
     outline: none;
     color: white;
     padding: 1px 12px;
-    font-size: 21px;
+    font-size: 20px;
     cursor: pointer;
 }
 .button-send:focus{
@@ -144,7 +144,7 @@ input.form-control:focus{
     .avatar{
         max-height: 40px;
         max-width: 40px;
-        border: 3px solid #00ffbe;
+        border: 3px solid rgb(0, 255, 0);
     }
     .nav-link{
         display: flex;

@@ -1,13 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import{auth,provider}from '../SERVICES/firebasse';
 import '../CSS/Login.css';
 import hero from '../Assets/teams.png';
+
 
 function Login() {
     const signinwithgoogle=()=>{
         auth.signInWithPopup(provider).catch(alert)
         
       };
+      const [email, setemail] = useState('')
+      const [password, setpassword] = useState('')
+      const [sin, setsin] = useState('')
+      const [userpic, setuserpic] = useState('')
+      const [Name, setName] = useState('')
+      const signin=async()=>{
+        await auth.createUserWithEmailAndPassword(email,password).then(user=>{user.user.updateProfile({
+          displayName: Name,
+          photoURL:userpic,
+        })}).catch((err)=>{
+          switch(err.code){
+            case 'auth/email-already-in-use':
+              setsin("Dear User You Have Already Signed Up With This Email And Password Now Just Sign In :)")
+              break
+              default:
+                
+              
+
+          }
+        })
+        
+        
+      }
+      const signup=()=>{
+        auth.signInWithEmailAndPassword(email,password)
+      }
+      
     return (
       //<button  className="login-provider-button" onClick={signinwithgoogle} >
       //src={book}
@@ -27,15 +55,24 @@ function Login() {
             <br/>
             <center><span className="text-white font-weight-bolder">OR</span></center>
             <br/>
-            <form action="Home.js" method="POST">
+            <form>
+            <div class="form-group">
+    <input type="text" value={Name} onChange={(e)=>{setName(e.target.value)}} class="form-control" placeholder="Enter Your Name" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+  </div>
   <div class="form-group">
-    <input type="email" class="form-control" placeholder="Enter E-mail address" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
+    <input type="email" value={email} onChange={(e)=>{setemail(e.target.value)}} class="form-control" placeholder="Enter E-mail address" id="exampleInputEmail1" aria-describedby="emailHelp" required/>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" placeholder="Enter Password" id="exampleInputPassword1" required/>
+    <input type="password" value={password} onChange={(e)=>{setpassword(e.target.value)}} class="form-control" placeholder="Enter Password" id="exampleInputPassword1" required/>
   </div>
-  <center><button type="submit" class="btn btn-lg"><b>Sign In <i class="fa fa-long-arrow-right"></i>
+  <div class="form-group">
+    <input type="text" value={userpic} onChange={(e)=>{setuserpic(e.target.value)}} class="form-control" placeholder="Paste Your Profile Pic Url" id="exampleInputPassword1" required/>
+  </div>
+  <center><button type="button" onClick={signin} class="btn btn-lg"><b>Sign Up <i class="fa fa-long-arrow-right"></i>
+</b></button></center>
+      <h5 style={{color:'white'}} >{sin}</h5>
+<center><button type="button" onClick={signup} class="btn btn-lg"><b>Sign In <i class="fa fa-long-arrow-right"></i>
 </b></button></center>
 </form>
           </div>
