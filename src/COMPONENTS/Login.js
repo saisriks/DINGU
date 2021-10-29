@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import{auth,provider}from '../SERVICES/firebasse';
 import '../CSS/Login.css';
 import hero from '../Assets/teams.png';
@@ -14,25 +14,21 @@ function Login() {
 
 
 
-      //new animation code
-    const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-signUpButton.addEventListener('click', () =>
-container.classList.add('right-panel-active'));
-
-signInButton.addEventListener('click', () =>
-container.classList.remove('right-panel-active'));
-//
+     
 
 
 
+
+
+
+      const[periyatholla,setperiyatholla]=useState(false);
       const [email, setemail] = useState('')
       const [password, setpassword] = useState('')
       const [sin, setsin] = useState('')
       const [userpic, setuserpic] = useState('')
       const [Name, setName] = useState('')
+       //new animation code
+  
       const signin=async()=>{
         await auth.createUserWithEmailAndPassword(email,password).then(user=>{user.user.updateProfile({
           displayName: Name,
@@ -57,8 +53,9 @@ container.classList.remove('right-panel-active'));
       
       
     return (
-      //<button  className="login-provider-button" onClick={signinwithgoogle} >
-      //src={book}
+      
+      
+      
       <div className="main">
         <h1 id="heading" className="heading font-weight-bolder mt-3 pr-4">&gt;&gt;DINGU</h1>
         {/*<div className="row no-gutters">
@@ -102,35 +99,45 @@ container.classList.remove('right-panel-active'));
 
 
 
-        <div class="container" id="container">
+        <div class={periyatholla?'container right-panel-active':'container'}  id="container">
         <div class="form-container sign-up-container">
             <form action="#">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <span>or use your email for registration</span>
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
-                <button>Sign Up</button>
+                <h1>Create An Account</h1>
+            
+                <input value={Name} onChange={(e)=>{
+                  setName(e.target.value)
+                }} type="text" placeholder="Name" required={true}/>
+                <input value={email} onChange={(e)=>{
+                  setemail(e.target.value)
+                }} type="email" placeholder="Email"required={true} />
+                <input value={password} onChange={(e)=>{
+                  setpassword(e.target.value)
+                }} type="password" placeholder="Password"required={true} />
+                <input value={userpic} onChange={(e)=>{
+                  setuserpic(e.target.value)
+                }} type="text" placeholder="Enter Your Profile Pic Url"  />
+                <button onClick={signin} >Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
             <form action="#">
                 <h1>Sign in</h1>
                 <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                <button type="button" className="btn btn-lg btn-block" onClick={signinwithgoogle}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#3cba54" className="bi bi-google pb-1" viewBox="0 0 16 16">
+  <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+</svg> <span className="signin-text font-weight-bolder">Sign In</span>
+            </button>
                 </div>
-                <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <span className='span'>or use your account</span>
+                <input type="email" value={email} onChange={(e)=>{
+                  setemail(e.target.value)
+                }} placeholder="Email"required={true} />
+                <input value={password} onChange={(e)=>{
+                  setpassword(e.target.value)
+                }} type="password" placeholder="Password"required={true} />
                 <a href="#">Forgot your password?</a>
-                <button>Sign In</button>
+                <button  onClick={signup} >Sign In</button>
             </form>
         </div>
         <div class="overlay-container">
@@ -138,31 +145,17 @@ container.classList.remove('right-panel-active'));
                 <div class="overlay-panel overlay-left">
                     <h1>Welcome Back!</h1>
                     <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn">Sign In</button>
+                    <button class="ghost" id="signIn" onClick={()=>{setperiyatholla(false)}} >Sign In</button>
                 </div>
                 <div class="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
                     <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp">Sign Up</button>
+                    <button class="ghost" id="signUp" onClick={()=>{setperiyatholla(true)}} >Sign Up</button>
                 </div>
             </div>
         </div>
     </div>
+    </div>)
 
-
-
-
-
-
-
-        {/*<footer className="footer mt-auto py-3">
-  <div className="container border-0">
-    <center><span className="text-muted">&gt;&gt;DINGU © 2021</span></center>
-  </div>
-</footer>*/}
-      </div>
-      
-    )
 }
-
 export default Login;
