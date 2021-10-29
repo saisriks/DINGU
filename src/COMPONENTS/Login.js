@@ -4,11 +4,30 @@ import '../CSS/Login.css';
 import hero from '../Assets/teams.png';
 
 
+
 function Login() {
     const signinwithgoogle=()=>{
         auth.signInWithPopup(provider).catch(alert)
         
       };
+
+
+
+
+      //new animation code
+    const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () =>
+container.classList.add('right-panel-active'));
+
+signInButton.addEventListener('click', () =>
+container.classList.remove('right-panel-active'));
+//
+
+
+
       const [email, setemail] = useState('')
       const [password, setpassword] = useState('')
       const [sin, setsin] = useState('')
@@ -21,7 +40,7 @@ function Login() {
         })}).catch((err)=>{
           switch(err.code){
             case 'auth/email-already-in-use':
-              setsin("Dear User You Have Already Signed Up With This Email And Password Now Just Sign In :)")
+              setsin("E-mail already in use")
               break
               default:
                 
@@ -36,12 +55,13 @@ function Login() {
         auth.signInWithEmailAndPassword(email,password)
       }
       
+      
     return (
       //<button  className="login-provider-button" onClick={signinwithgoogle} >
       //src={book}
       <div className="main">
         <h1 id="heading" className="heading font-weight-bolder mt-3 pr-4">&gt;&gt;DINGU</h1>
-        <div className="row no-gutters">
+        {/*<div className="row no-gutters">
         <div id="img-grid" className="col-sm-5 col-md-5 mx-3 py-3 my-3" align="center">
               <img className="img-fluid" src={hero} alt=""/>
             </div>
@@ -71,17 +91,75 @@ function Login() {
   </div>
   <center><button type="button" onClick={signin} class="btn btn-lg"><b>Sign Up <i class="fa fa-long-arrow-right"></i>
 </b></button></center>
-      <h5 style={{color:'white'}} >{sin}</h5>
+      <center><h6 style={{color:'red'}} >{sin}</h6></center>
 <center><button type="button" onClick={signup} class="btn btn-lg"><b>Sign In <i class="fa fa-long-arrow-right"></i>
 </b></button></center>
 </form>
           </div>
+        </div>*/}
+        
+
+
+
+
+        <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Sign Up</button>
+            </form>
         </div>
-        <footer className="footer mt-auto py-3">
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <a href="#">Forgot your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+        {/*<footer className="footer mt-auto py-3">
   <div className="container border-0">
     <center><span className="text-muted">&gt;&gt;DINGU © 2021</span></center>
   </div>
-</footer>
+</footer>*/}
       </div>
       
     )
