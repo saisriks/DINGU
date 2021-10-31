@@ -1,4 +1,9 @@
 /*GOOGLE FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
+
+
+/*GOOGLE FONTS*/
 /*@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');*/
 
@@ -22,7 +27,6 @@
     padding-bottom: 10px;
     border-bottom: 3px solid rgb(66, 66, 66);
 }
-
 .signin-text{
     font-size: 21px;
 }
@@ -47,9 +51,7 @@
 .container{
     background: #0d0d0d;
 }
-
 @media (max-width: 765px) {
-
     .heading{
         display: flex;
         justify-content: center;
@@ -88,7 +90,10 @@ h1 {
     font-weight: bold;
     margin: 0;
 }
-
+h3{
+    font-weight: bold;
+    color: #00ffbe;
+}
 p {
     font-size: 14px;
     font-weight: 100;
@@ -107,6 +112,17 @@ a {
     text-decoration: none;
     margin: 15px 0;
 }
+a:hover{
+    text-decoration: none;
+    color: #00ffbe;
+}
+::placeholder {
+    color: #3a3a3a;
+    font-weight: 600;
+}
+.navbar .navbar-brand{
+    color: #00ffbe;
+}
 
 .container {
     background: #fff;
@@ -120,7 +136,7 @@ a {
 }
 
 .form-container form {
-    background: #fff;
+    background: #131313;
     display: flex;
     flex-direction: column;
     padding:  0 50px;
@@ -135,7 +151,7 @@ a {
 }
 
 .social-container a {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(255, 0, 0);
     border-radius: 50%;
     display: inline-flex;
     justify-content: center;
@@ -148,26 +164,43 @@ a {
 .form-container input {
     background: #eee;
     border: none;
+    outline: none;
+    border-radius: 8px;
     padding: 12px 15px;
     margin: 8px 0;
     width: 100%;
 }
 
+.btn{
+    border: 2px solid #00ffbe;
+}
+.btn:hover{
+    background: #00ffbe;
+    color: #000000;
+    border: 2px solid #00ffbe;
+    box-shadow: 0 0 10px #00ffbe;
+}
+
 button {
-    border-radius: 20px;
-    border: 1px solid #ff4b2b;
-    background: #ff445c;
+    border-radius: 8px;
+    border: 2px solid #00ffbe;
+    background: rgb(17, 17, 17);
     color: #fff;
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: transform 80ms ease-in;
+    transition: .10s ease-in;
 }
 
 button:active {
     transform: scale(.95);
+}
+button:hover{
+    background: #00ffbe;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 15px #00ffbe;
 }
 
 button:focus {
@@ -175,8 +208,15 @@ button:focus {
 }
 
 button.ghost {
+    color: #000000;
     background: transparent;
-    border-color: #fff;
+    border-color: rgb(0, 0, 0);
+}
+button.ghost:hover {
+    background: rgb(22, 22, 22);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0px 0px 15px #000000;
 }
 
 .form-container {
@@ -211,9 +251,8 @@ button.ghost {
 }
 
 .overlay {
-    background: #ff416c;
-    background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
-    color: #fff;
+    background: #00ffbe;
+    color: rgb(0, 0, 0);
     position: relative;
     left: -100%;
     height: 100%;

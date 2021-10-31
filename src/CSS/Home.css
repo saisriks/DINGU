@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/cascadia-code.min.css");
+
 body{
     margin: 0;
     padding: 0;
@@ -33,7 +34,7 @@ body{
 .nav-tab{
     border: none;
     outline: none;
-    background-color: rgb(0, 0, 0);
+    background-color: #0d0d0d;
     text-decoration-style: none;
 }
 .nav-link{
