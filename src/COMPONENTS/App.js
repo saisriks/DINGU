@@ -10,7 +10,7 @@ import '../CSS/App.css';
 
 
 function App() {
- 
+
   const [user, loading] = useAuthState(auth);
 auth.onAuthStateChanged((user)=>{console.log(user)})
 
@@ -40,7 +40,4 @@ return  <Login/>
 }
 
 export default App;
-
-
-
 
