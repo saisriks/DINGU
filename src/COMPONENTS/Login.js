@@ -10,18 +10,6 @@ function Login() {
         auth.signInWithPopup(provider).catch(alert)
         
       };
-
-
-
-
-     
-
-
-
-
-
-
-      const[periyatholla,setperiyatholla]=useState(false);
       const [email, setemail] = useState('')
       const [password, setpassword] = useState('')
       const [sin, setsin] = useState('')
@@ -56,10 +44,12 @@ function Login() {
       
       
       
-      <div className="main">
+      <div className="main-credential">
         <nav class="navbar navbar-dark justify-content-center fixed-top">
           <span class="navbar-brand heading font-weight-bolder mb-0 h1">&gt;&gt;DINGU</span>
         </nav>
+        
+        
         {/*<div className="row no-gutters">
         <div id="img-grid" className="col-sm-5 col-md-5 mx-3 py-3 my-3" align="center">
               <img className="img-fluid" src={hero} alt=""/>
@@ -101,11 +91,10 @@ function Login() {
 
 
 
-        <div class={periyatholla?'container right-panel-active':'container'}  id="container">
-        <div class="form-container sign-up-container">
-            <form action="#">
-                <h3>Create An Account</h3>
-            
+        <div class="form-container sign-up-container" id="SignUp">
+            <form className="SignUp-Form py-3" action="#">
+                <h3 className="form-title">Create An Account</h3>
+                <hr style={{background:"green"}}/>
                 <input value={Name} onChange={(e)=>{
                   setName(e.target.value)
                 }} type="text" placeholder="Enter your Name" required={true}/>
@@ -120,11 +109,26 @@ function Login() {
                 }} type="text" placeholder="Enter URL of the profile pic"  />
                 <div class="divider mt-2"></div>
                 <button onClick={signin} >Sign Up</button>
+                <br/>
+                <span className="text-dark ">Have an account? <a href="#SignIn" className="text-success font-weight-bold">Sign in</a></span>
             </form>
         </div>
-        <div class="form-container sign-in-container">
-            <form action="#">
-                <h3>Sign in to continue</h3>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div id="SignIn"></div>
+        <div class="form-container sign-in-container mb-4" id="Signin">
+            <form className="SignIn-Form py-3" action="#">
+                <h3 className="form-title">Sign in to continue</h3>
                 <hr style={{background:"green"}}/>
                 <div class="social-container">
                   <button type="button" className="btn btn-lg btn-block" onClick={signinwithgoogle}>
@@ -142,25 +146,15 @@ function Login() {
                   setpassword(e.target.value)
                 }} type="password" placeholder="Password"required={true} />
                 <a href="#">Forgot your password?</a>
-                <button  onClick={signup} >Sign In</button>
+                <button class="button mt-1" onClick={signup} >Sign In</button>
+                <br/>
+                <span className="text-dark ">Don't have an account? <a href="#" className="text-success font-weight-bold">Sign up</a></span>
             </form>
         </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-left">
-                    <h1>Welcome Back!</h1>
-                    <p>To keep connected with us please login with your personal info</p>
-                    <button class="ghost" id="signIn" onClick={()=>{setperiyatholla(false)}} >Sign In</button>
-                </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and start journey with us</p>
-                    <button class="ghost" id="signUp" onClick={()=>{setperiyatholla(true)}} >Sign Up</button>
-                </div>
-            </div>
-        </div>
+        <br/>
     </div>
-    </div>)
+    
+    )
 
 }
 export default Login;
