@@ -70,13 +70,9 @@
 }*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-* {
-    box-sizing: border-box;
-}
 
-body {
+.main-credential {
     font-family: 'Montserrat', sans-serif;
-    background: #f6f5f7;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,7 +88,7 @@ h1 {
 }
 h3{
     font-weight: bold;
-    color: #00ffbe;
+    color: #00e472;
 }
 p {
     font-size: 14px;
@@ -103,38 +99,34 @@ p {
 }
 
 span {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 a {
     color: #333;
     font-size: 14px;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 1px 0;
 }
 a:hover{
     text-decoration: none;
-    color: #00ffbe;
+    color: #00e472;
 }
 ::placeholder {
     color: #3a3a3a;
     font-weight: 600;
 }
+nav{
+    background: #131313;
+    border-bottom: 2px dashed #00e472;
+}
 .navbar .navbar-brand{
-    color: #00ffbe;
+    color: #00e472;
+    
 }
-
-.container {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
+.form-title{
+    margin-top: 30px;
 }
-
 .form-container form {
     background: #131313;
     display: flex;
@@ -150,16 +142,7 @@ a:hover{
     margin: 20px 0;
 }
 
-.social-container a {
-    border: 1px solid rgb(255, 0, 0);
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5px;
-    height: 40px;
-    width: 40px;
-}
+
 
 .form-container input {
     background: #eee;
@@ -171,19 +154,23 @@ a:hover{
     width: 100%;
 }
 
+.sign-up-container{
+    margin-top: 55rem;
+}
+
 .btn{
-    border: 2px solid #00ffbe;
+    border: 2px solid #00e472;
 }
 .btn:hover{
-    background: #00ffbe;
+    background: #00e472;
     color: #000000;
-    border: 2px solid #00ffbe;
-    box-shadow: 0 0 10px #00ffbe;
+    border: 2px solid #00e472;
+    box-shadow: 0 0 10px #00e472;
 }
 
 button {
     border-radius: 8px;
-    border: 2px solid #00ffbe;
+    border: 2px solid #00e472;
     background: rgb(17, 17, 17);
     color: #fff;
     font-size: 12px;
@@ -198,9 +185,9 @@ button:active {
     transform: scale(.95);
 }
 button:hover{
-    background: #00ffbe;
+    background: #00e472;
     color: rgb(0, 0, 0);
-    box-shadow: 0px 0px 15px #00ffbe;
+    box-shadow: 0px 0px 15px #00e472;
 }
 
 button:focus {
@@ -219,103 +206,10 @@ button.ghost:hover {
     box-shadow: 0px 0px 15px #000000;
 }
 
-.form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all .6s ease-in-out;
-}
 
-.sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
 
-.sign-up-container {
-    left: 0;
-    width: 50%;
-    z-index: 1;
-    opacity: 0;
-}
 
-.overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform .6s ease-in-out;
-    z-index: 100;
-}
 
-.overlay {
-    background: #00ffbe;
-    color: rgb(0, 0, 0);
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateY(0);
-    transition: transform .6s ease-in-out;
-}
-
-.overlay-panel {
-    position: absolute;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 40px;
-    height: 100%;
-    width: 50%;
-    text-align: center;
-    transform: translateY(0);
-    transition: transform .6s ease-in-out;
-}
-
-.overlay-right {
-    right: 0;
-    transform: translateY(0);
-}
-
-.overlay-left {
-    transform: translateY(-20%);
-}
-
-/* Move signin to right */
-.container.right-panel-active .sign-in-container {
-    transform: translateY(100%);
-}
-
-/* Move overlay to left */
-.container.right-panel-active .overlay-container {
-    transform: translateX(-100%);
-}
-
-/* Bring signup over signin */
-.container.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-}
-
-/* Move overlay back to right */
-.container.right-panel-active .overlay {
-    transform: translateX(50%);
-}
-
-/* Bring back the text to center */
-.container.right-panel-active .overlay-left {
-    transform: translateY(0);
-}
-
-/* Same effect for right */
-.container.right-panel-active .overlay-right {
-    transform: translateY(20%);
-}
 
 .footer {
 	margin-top: 25px;
@@ -323,10 +217,8 @@ button.ghost:hover {
 }
 
 
-.icons {
-	display: flex;
-	width: 30px;
-	height: 30px;
-	letter-spacing: 15px;
-	align-items: center;
+@media (max-width: 765px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
 }
