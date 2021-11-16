@@ -20,8 +20,18 @@ body{
     background: none;
 }
 button.navbar-toggler{
+    background: none;
+    box-shadow: none;
     border: none;
     outline: none;
+}
+.navbar-toggler:hover{
+    background: none;
+    box-shadow: none;
+}
+.navbar-toggler:focus{
+    background: none;
+    box-shadow: none;
 }
 .dropdown-toggle{
     border: none;
@@ -75,6 +85,7 @@ button.navbar-toggler{
         border: 2px solid #00ffbe;
         box-shadow: 0 0 0 #000000;
         width: 100%;
+        text-transform: capitalize;
     }
     #signoutbtn:hover{
         background: #00ffbe;

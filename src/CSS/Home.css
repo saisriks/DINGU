@@ -54,12 +54,12 @@ body{
 .avatar-false{
     max-height: 551px;
     max-width: 55px;
-    border: 3px solid rgb(0, 255, 0);
+    border: 3px solid #00e472;
 }
 .avatar-true{
     max-height: 55px;
     max-width: 55px;
-    border: 3px solid rgb(0, 255, 0);
+    border: 3px solid #00e472;
 }
 
   .tru{
@@ -78,7 +78,7 @@ body{
 input.form-control{
     width: 100%;
     background-color: rgb(10, 10, 10);
-    border: 2px solid rgb(0, 255, 0);
+    border: 2px solid #00e472;
     font-family: 'Cascadia Code', sans-serif;
 }
 input.form-control:focus{
@@ -87,7 +87,7 @@ input.form-control:focus{
     box-shadow: none;
 }
 .file-btn-label {
-    background-color: rgb(0, 255, 0);
+    background-color: #00e472;
     color: white;
     padding: 6px;
     cursor: pointer;
@@ -149,7 +149,7 @@ input.form-control:focus{
     .avatar{
         max-height: 40px;
         max-width: 40px;
-        border: 3px solid rgb(0, 255, 0);
+        border: 3px solid #00e472;
     }
     .nav-link{
         display: flex;
