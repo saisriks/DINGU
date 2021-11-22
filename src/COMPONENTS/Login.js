@@ -46,7 +46,7 @@ function Login() {
       
       <div className="main-credential">
         <nav class="navbar navbar-dark justify-content-center fixed-top">
-          <span class="navbar-brand heading font-weight-bolder mb-0 h1">&gt;&gt;DINGU</span>
+          <span class="navbar-brand heading font-weight-bolder mb-0 h1 pr-3">&gt;&gt;DINGU</span>
         </nav>
         
         
@@ -91,7 +91,7 @@ function Login() {
 
 
 
-        <div class="form-container sign-up-container" id="SignUp">
+        {/*<div class="form-container sign-up-container" id="SignUp">
             <form className="SignUp-Form py-3" action="#">
                 <h3 className="form-title">Create An Account</h3>
                 <hr style={{background:"green"}}/>
@@ -106,7 +106,7 @@ function Login() {
                 }} type="password" placeholder="Enter Password"required={true} />
                 <input value={userpic} onChange={(e)=>{
                   setuserpic(e.target.value)
-                }} type="text" placeholder="Enter URL of the profile pic"  />
+                }} type="text" placeholder="Enter URL of profile pic"  />
                 <div class="divider mt-2"></div>
                 <button onClick={signin} >Sign Up</button>
                 <br/>
@@ -124,34 +124,36 @@ function Login() {
         <br/>
         <br/>
         <br/>
-        <br/>
-        <div id="SignIn"></div>
+              <br/>*/}
+        <div id="SignIn">
         <div class="form-container sign-in-container mb-4" id="Signin">
             <form className="SignIn-Form py-3" action="#">
                 <h3 className="form-title">Sign in to continue</h3>
-                <hr style={{background:"green"}}/>
                 <div class="social-container">
-                  <button type="button" className="btn btn-lg btn-block" onClick={signinwithgoogle}>
+                  <button type="button" className="btn btn-lg btn-block google-signin-btn" onClick={signinwithgoogle}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" className="bi bi-google pb-1 mr-2" viewBox="0 0 16 16">
                       <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
                     </svg>
                     <span className="signin-text font-weight-bolder h6 text-white text-capitalize">Sign In with Google</span>
                   </button>
                 </div>
+                {/*
                 <span className='span text-white'><b>Or</b> use your account</span>
                 <input type="email" value={email} onChange={(e)=>{
                   setemail(e.target.value)
-                }} placeholder="Email"required={true} />
+                }} placeholder="  Enter Email"required={true} />
                 <input value={password} onChange={(e)=>{
                   setpassword(e.target.value)
-                }} type="password" placeholder="Password"required={true} />
+                }} type="password" placeholder="Enter Password"required={true} />
                 <a href="#">Forgot your password?</a>
                 <button class="button mt-1" onClick={signup} >Sign In</button>
                 <br/>
                 <span className="text-dark ">Don't have an account? <a href="#" className="text-success font-weight-bold">Sign up</a></span>
+                */}
             </form>
         </div>
-        <br/>
+        {/* <br/>*/}
+      </div>
     </div>
     
     )

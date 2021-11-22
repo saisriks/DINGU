@@ -91,13 +91,14 @@ function Home() {
             <span key={post.key} className={"user-info text-monospace"/* +(post.uploadedby===user.displayName?"if true":"if false") */}>{post.uploadedby}</span>
 
             <div key={post.key} className={"nav-link mb-3 "+(post.uid===user.uid?"if tru":"if fals")}>
-              
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-file-earmark-arrow-down mb-2" viewBox="0 0 16 16">
+
+              <a key={post.key} className={"file-info "/* +(post.uploadedby===user.displayName?"if true":"if false") */} href={post.url} >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-file-earmark-arrow-down mb-2 mr-1" viewBox="0 0 16 16">
                 <path d="M8.5 6.5a.5.5 0 0 0-1 0v3.793L6.354 9.146a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 10.293V6.5z"/>
                 <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
               </svg>
-
-              <a key={post.key} className={"file-info "/* +(post.uploadedby===user.displayName?"if true":"if false") */} href={post.url} style={{fontSize:"14px"}} >{(post.name).toUpperCase()}</a>
+                {(post.name).toUpperCase()}
+                </a>
 
               <br/>
 
@@ -106,21 +107,21 @@ function Home() {
             </div>
           </div>
         </div>
-        </>):<h1 align="center" style={{color:'rgb(0,225,0)'}} >NO MESSAGES :( </h1>}
+        </>):<h2 align="center" style={{color:'rgb(0,228,114)'}} >NO MESSAGES :( </h2>}
       </div>
 
       {/* MESSAGE-TYPING-FIELD */}
       <div className="message-typing-box">
 
-        <nav className="navbar fixed-bottom navbar-expand-lg" id="message-typing-box">
-          <h5 className="text mr-1" style={{color:"green"}} >{''}</h5>
-          <div className="input-group mb-3">
+        <nav className="navbar fixed-bottom navbar-expand-sm" id="message-typing-box">
+          <h5 className="text mr-1" style={{color:"rgb(0,228,114)"}} >{''}</h5>
+          <div className="input-group">
 
             {/* TEXT-FIELD */}
             <input type="text" className="form-control mt-3" placeholder={placeholder} onFocus={placeholdersetter} onBlur={()=>{setplaceholder("Compose your message")}} value={name} onChange={(e)=>{setname(e.target.value)}} />
 
             {/* FILE-IMPORT-BUTTON */}
-            <input type="file" id="file" accept="application/pdf"  onChange={(e)=>{setimage(e.target.files[0])}}/>
+            <input type="file" id="file" accept=""  onChange={(e)=>{setimage(e.target.files[0])}}/>
             <label for="file" className="file-btn-label text-dark">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-paperclip" viewBox="0 0 16 16">
                 <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
