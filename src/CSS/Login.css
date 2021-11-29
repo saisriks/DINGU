@@ -78,7 +78,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: -20px 0 50px;
+    margin: -20px 0 0px;
 		margin-top: 20px;
 }
 
@@ -117,10 +117,10 @@ a:hover{
     font-weight: 600;
 }
 nav{
-    background: #131313;
+    background: #191919;
 }
 .fixed-top{
-    border: 2px solid #00e472;
+    border: none;
 }
 .navbar .navbar-brand{
     color: #00e472;
@@ -130,7 +130,8 @@ nav{
     margin-top: 30px;
 }
 .form-container form {
-    background: #131313;
+    margin: 0 15px;
+    background: #191919;
     display: flex;
     flex-direction: column;
     padding:  0 50px;
@@ -144,7 +145,9 @@ nav{
     margin: 20px 0;
 }
 
-
+.SignIn-Form{
+    border-radius: 7px;
+}
 
 .form-container input {
     background: #eee;
@@ -160,19 +163,19 @@ nav{
     margin-top: 55rem;
 }
 
-.btn{
-    border: 2px solid #00e472;
+.google-signin-btn{
+    border: 1px solid #00e472;
 }
-.btn:hover{
+.google-signin-btn:hover{
     background: #00e472;
     color: #000000;
-    border: 2px solid #00e472;
+    border: 1px solid #00e472;
     box-shadow: 0 0 10px #00e472;
 }
 
 button {
     border-radius: 8px;
-    border: 2px solid #00e472;
+    border: 1px solid #00e472;
     background: rgb(17, 17, 17);
     color: #fff;
     font-size: 12px;

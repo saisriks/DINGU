@@ -7,21 +7,26 @@ body{
     margin: 0;
     padding: 0;
     background: none;
+    margin-left: 5px;
+    margin-right: 8px;
 }
 
-.file-info{
+a.file-info{
+    font-size: 15px;
     color: rgb(0, 0, 0);
     font-weight: bolder;
+}
+.file-info:hover{
+    color: #000000;
+    text-decoration: none;
 }
 .false{
     display: flex;
     align-self: flex-start;
-    margin-right: 225px;
 }
 .true{
     display: flex;
     align-self: flex-end;
-    margin-right: 10px;
     flex-direction: row-reverse;
 }
 .posts{
@@ -41,44 +46,64 @@ body{
     font-size: 14px;
     border-radius: 6px;
 }
-.date{
+.tru .date{
     font-size: 10px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+}
+.fals .date{
+    font-size: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 .user-info{
     font-size: 11px;
     color: #fff;
 }
 .avatar-false{
-    max-height: 551px;
-    max-width: 55px;
-    border: 3px solid #00e472;
-}
-.avatar-true{
+    margin-top: 20px;
     max-height: 55px;
     max-width: 55px;
-    border: 3px solid #00e472;
+    border: 2px solid #00e472;
+}
+.avatar-true{
+    margin-top: 20px;
+    max-height: 55px;
+    max-width: 55px;
+    border: 2px solid #00e472;
 }
 
-  .tru{
-    background-color: rgb(203, 209, 209);
-  }
-  .fals{
-      background-color: rgb(211, 208, 208) ;
-  }
+.tru{
+    background-color: rgb(240, 238, 238);
+    border-top-right-radius: 0px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+.fals{
+    background-color: rgb(240, 238, 238);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
 
 
   /* MESSAGE-TYPING-FIELD */
 #message-typing-box{
-    background: rgb(0, 0, 0);
-    border-top: 2px solid rgb(66, 66, 66);
+    padding: 0 10px;
+    background: #0c0c0c!important;
+    /*border-top: 2px solid rgb(66, 66, 66);*/
+}
+.input-group{
+    padding: 0;
 }
 input.form-control{
     width: 100%;
     background-color: rgb(10, 10, 10);
-    border: 2px solid #00e472;
+    border: 1px solid #00e472;
     font-family: 'Cascadia Code', sans-serif;
 }
 input.form-control:focus{
@@ -94,6 +119,7 @@ input.form-control:focus{
     margin-top: 1rem;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
+    /*border-top: 2px solid #00e472;*/
 }
 [type="file"] {
     height: 0;
@@ -101,12 +127,13 @@ input.form-control:focus{
     width: 0;
 }
 .button-send {
-    background-color: rgb(0, 0, 0);
+    background-color: #0c0c0c!important;
     border: none;
     outline: none;
     color: white;
-    padding: 1px 12px;
-    font-size: 20px;
+    padding: 0 7px;
+    margin-top: 7px;
+    font-size: 19px;
     cursor: pointer;
 }
 .button-send:focus{
@@ -114,13 +141,29 @@ input.form-control:focus{
     outline: none;
 }
 .button-send:hover{
-    background-color: #000000;
+    background-color: #0c0c0c!important;
     color: white;
     box-shadow: none;
 }
 
 @media (max-width: 700px) {
     
+    .fals a.file-info{
+        padding: 0 8px 0 0;
+        font-size: 10px;
+        color: rgb(0, 0, 0);
+        font-weight: bolder;
+    }
+    .tru a.file-info{
+        padding: 0 8px 0 0;
+        font-size: 10px;
+        color: rgb(0, 0, 0);
+        font-weight: bolder;
+    }
+    .file-info:hover{
+        color: #000000;
+        text-decoration: none;
+    }
     .false{
         margin-right: 20px;
     }
@@ -134,7 +177,16 @@ input.form-control:focus{
         max-width: 200px;
     }
     .date{
-        font-size: 8px;
+        font-size: 9px;
+    }
+    .tru .date{
+        margin: 10px 0 0 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    .fals .date{
+        margin: 10px 0 0 0;
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;

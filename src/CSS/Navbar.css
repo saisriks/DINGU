@@ -1,11 +1,11 @@
-body{
+.Navbar{
     margin: 0;
     padding: 0;
     background: none;
 }
 .bg-dark {
-    background-color: #000000!important;
-    border-bottom: 2px solid rgb(66, 66, 66);
+    background-color: #0d0d0d!important;
+    border-bottom: 1px solid rgb(66, 66, 66);
 }
 .heading{
     display: flex;
@@ -14,13 +14,19 @@ body{
     font-family: 'Poppins', sans-serif;
     font-weight: 900px;
     font-size: 40px;
-    color: #00ffbe;
+    color: #00e472;
+}
+.sub-brand-name{
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 1.50rem;
 }
 .dropdown-menu{
     background: none;
 }
 button.navbar-toggler{
-    background: none;
+    background-color: #202020;
+    padding-bottom: 6px;
     box-shadow: none;
     border: none;
     outline: none;
@@ -33,6 +39,9 @@ button.navbar-toggler{
     background: none;
     box-shadow: none;
 }
+.navbar-toggler-icon{
+    font-size: 15px;
+}
 .dropdown-toggle{
     border: none;
 }
@@ -42,23 +51,35 @@ button.navbar-toggler{
 .user-name{
     font-size: large;
     font-weight: bolder;
-    color: #00ffbe;
+    color: #00e472;
 }
-.avatar{
-    border: 3px solid #00ffbe;
+img.avatar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 41px;
+    height: 41px;
+    line-height: 1px;
+    border-radius: 15%;
+    overflow: hidden;
+    border: 1px solid #2b2b2b;
 }
 #signoutbtn{
-    background: #00ffbe;
+    margin-top: 5px;
+    background: #00e472;
     color: #000000;
-    box-shadow: 0px 0px 20px #00ffbe;
+    border: 1px solid #00e472;
+    box-shadow: 0 0 0 #000000;
     width: 100%;
 }
 #signoutbtn:hover{
+    margin-top: 5px;
     color: rgb(255, 255, 255);
-    background: #000000;
-    border: 2px solid #00ffbe;
+    background: #0d0d0d;
+    border: 1px solid #00e472;
     box-shadow: 0 0 0 #000000;
-    margin: auto;
 }
 .btn{
     box-shadow: none;
@@ -70,10 +91,15 @@ button.navbar-toggler{
         font-family: 'Poppins', sans-serif;
         font-weight: 900px;
         font-size: 25px;
-        color: #00ffbe;
+        color: #00e472;
+    }
+    .sub-brand-name{
+        margin-top: 2px;
+        margin-left: 2px;
+        font-size: 1rem;
     }
     .avatar{
-        border: 2px solid #00ffbe;
+        border: 2px solid #00e472;
         margin-top: 10px;
     }
     .user-name{
@@ -81,22 +107,21 @@ button.navbar-toggler{
     }
     #signoutbtn{
         color: rgb(255, 255, 255);
-        background: #000000;
-        border: 2px solid #00ffbe;
+        background: #0d0d0d;
+        border: 1px solid #00e472;
         box-shadow: 0 0 0 #000000;
         width: 100%;
-        text-transform: capitalize;
     }
     #signoutbtn:hover{
-        background: #00ffbe;
+        background: #00e472;
         color: #000000;
-        border: 2px solid #00ffbe;
-        box-shadow: 0px 0px 20px #00ffbe;
+        border: 1px solid #00e472;
+        box-shadow: 0px 0px 20px #00e472;
         }
         .btn{
             box-shadow: none;
         }
     .nav-item{
-        border-top: 2px solid rgb(66, 66, 66);
+        border-top: 1px solid rgb(66, 66, 66);
     }
 }
