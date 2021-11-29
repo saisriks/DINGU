@@ -44,7 +44,7 @@ function Home() {
     const upload = async ()=>{
       setsendin(false)
 
-      if(image.size>1999999){
+      if(image.size>2999999){
         image.value=""
         alert(`Hey ${user.displayName} We Limit The File Size To 1 MB To Provide More Study Materials Please Reduce The File Size To 1MB`)
       setsendin(true)
@@ -85,10 +85,10 @@ function Home() {
         <div key={post.key} className={"form "+(post.uid===user.uid?"if true":"if false")}>
 
           {/* USER-AVATAR */}
-          <Avatar key={post.key} className={"avatar ml-2 mt-3 "+(post.uid===user.uid?"avatar-true mt-4":"avatar-false mt-4")} src={post.photourl} />
+          <Avatar key={post.key} className={"avatar ml-1 "+(post.uid===user.uid?"avatar-true":"avatar-false")} src={post.photourl} />
 
           <div key={post.key} className={"nav-tab ml-1"/* +(post.uploadedby===user.displayName?"if true":"if false") */} align="left">
-            <span key={post.key} className={"user-info text-monospace"/* +(post.uploadedby===user.displayName?"if true":"if false") */}>{post.uploadedby}</span>
+            <span key={post.key} className={"user-info text-monospace " +(post.uploadedby===user.displayName?"if true":"if false") }>{post.uploadedby}</span>
 
             <div key={post.key} className={"nav-link mb-3 "+(post.uid===user.uid?"if tru":"if fals")}>
 
